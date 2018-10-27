@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<p id="exibir"></p>
+
+<script type="text/javascript">
+
+window.onload = initPage;
+	function initPage(){
+		var data = new Date();
+		var diasDaSemana = new Array('domingo','segunda','terça','quarta','quinta','sexta','sábado');
+		var mesesDoAno = new Array('janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro');
+		
+		var obj = { diasSemanaNumero: data.getDay(), diasSemanaNome: diasDaSemana[data.getDay()], 
+					ano: data.getFullYear() , mesNumero: data.getMonth(), mesNome: mesesDoAno[data.getMonth()],
+					diaMes: data.getDate() , hora: data.getHours() , minuto: data.getMinutes() , segundo: data.getSeconds() };
+		var myJSON = JSON.stringify(obj);
+		document.getElementById("exibir").innerHTML = myJSON;
+		
+	}
+
+</script>
+</body>
+</html>
+
+
